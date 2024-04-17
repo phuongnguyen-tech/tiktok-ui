@@ -7,7 +7,130 @@
 }
 
 .inner {
+    display: flex;
+    justify-content: space-between;
     height: 100%;
     width: 1150px;
-    background-color: #ccc;
+    align-items: center;
+}
+
+.logo {
+    height: 42px;
+    width: 118px;
+}
+
+.search,
+.search-result {
+    width: 506px;
+    background-color: #fff;
+}
+
+.search {
+    flex-basis: 50%;
+    height: 46px;
+    padding-left: 16px;
+    display: flex;
+    border-radius: 20px;
+    background-color: rgba(22, 24, 35, 0.06);
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--text-color);
+        font-size: 1.6rem;
+        background-color: transparent;
+        &:hover ~ .search-btn {
+            cursor: pointer;
+            background-color: rgba(22, 24, 35, 0.05);
+        }
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        background-color: rgba(22, 24, 35, 0.05);
+    }
+    input:not(:placeholder-shown) ~ .close-btn {
+        display: block;
+    }
+}
+.search-result {
+    border-radius: 8px;
+    padding: 20px 0;
+}
+
+.close-btn {
+    display: none;
+    background-color: transparent;
+    svg {
+        color: #837f7f;
+        height: 16px;
+        width: 16px;
+        padding: 4px;
+        margin-right: 8px;
+        border-radius: 100%;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(22, 24, 35, 0.05);
+        }
+    }
+}
+.boundary {
+    margin-top: 7px;
+    height: 32px;
+    width: 1px;
+    background: #837f7f;
+}
+.search-btn {
+    height: 100%;
+    width: 52px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: transparent;
+    font-size: 2rem;
+    color: #837f7f;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.05);
+    }
+    &:active {
+        background-color: red;
+    }
+}
+
+.iconList {
+    display: flex;
+    button {
+        margin: 0 12px;
+    }
+}
+
+.upload {
+    display: flex;
+    svg {
+        margin-right: 8px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.05);
+    }
+}
+
+.login {
+    color: white;
+    background-color: #fe2c55;
+    height: 32px;
+    padding: 4px 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    border-radius: 4px;
+    &:hover {
+        cursor: pointer;
+        background-color: #ee5b79;
+    }
+}
+
+.ellipsis-ertical {
+    font-size: 1.6rem;
+    margin-right: 12px;
 }
