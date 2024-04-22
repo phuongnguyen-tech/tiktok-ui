@@ -10,14 +10,14 @@ function AccountItem() {
         <div className={cx('wrapper')}>
             <img
                 className={cx('avatar')}
-                src="https://images.pexels.com/photos/1408978/pexels-photo-1408978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="avatar"
+                src="https://images.pexels.com/photos/595747/pexels-photo-595747.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Hoaa"
             />
             <div className={cx('info')}>
-                <p className={cx('name')}>
+                <h4 className={cx('name')}>
                     <span>Nguyen Van A</span>
                     <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
-                </p>
+                </h4>
                 <span className={cx('username')}>nguyenvana</span>
             </div>
         </div>
