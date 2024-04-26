@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { pulicRoutes } from './routes';
+import { publicRoutes } from './routes';
 import { DefaultLayout } from '~/components/Layouts';
 import { Fragment } from 'react';
 import './App.css';
@@ -9,7 +9,7 @@ function App() {
         <Router>
             <div className="App">
                 <Routes>
-                    {pulicRoutes.map((route, index) => {
+                    {publicRoutes.map((route, index) => {
                         const Page = route.component;
 
                         let Layout = DefaultLayout;
