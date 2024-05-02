@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faArrowRightFromBracket,
     faCircleQuestion,
     faCoins,
     faEarthAsia,
     faGear,
     faKeyboard,
+    faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +22,8 @@ import Menu from '~/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -56,11 +58,21 @@ const MENU_ITEMS = [
 function Header() {
     const currentUser = true;
 
+    // Handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // Handle change language
+                break;
+            default:
+        }
+    };
+
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/@mySelf',
+            to: '/@hoaa',
         },
         {
             icon: <FontAwesomeIcon icon={faCoins} />,
@@ -74,28 +86,22 @@ function Header() {
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+            icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Log out',
             to: '/logout',
             separate: true,
         },
     ];
 
-    // Handle logic
-    const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                // Handle change language
-                break;
-            default:
-        }
-    };
-
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <Link to={config.routes.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
+
                 <Search />
+
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
@@ -127,9 +133,8 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://files.fullstack.edu.vn/4654fdhgf8-prod/user_avatars/1dsdg/623d4b2d95cec.png"
+                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                                 alt="Nguyen Van A"
-                                fallback="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnEquqKx_4BB68GJN8C8aUfZu6wBaBeQeqMQ&s"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

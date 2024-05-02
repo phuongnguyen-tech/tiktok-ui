@@ -11,6 +11,10 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    overflow-y: auto;
+}
+
 // Menu items
 .menu-item {
     width: 100%;
@@ -29,12 +33,12 @@
     }
 }
 
-//Header
-
+// Header
 .header {
     position: relative;
+    flex-shrink: 0;
     height: 50px;
-    margin-left: 8px;
+    margin-top: -8px;
 }
 
 .back-btn {
